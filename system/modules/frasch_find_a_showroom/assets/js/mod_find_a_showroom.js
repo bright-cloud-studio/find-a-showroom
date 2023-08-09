@@ -17,7 +17,7 @@ $( document ).ready(function() {
         }
         
         // Loop through each listing
-        $( ".rep_list .rep" ).each(function() {
+        $( ".showroom_list .showroom" ).each(function() {
             
             // If this rep has our selected state in it's class list, show the rep
             if($(this).hasClass(selectedState)) {
@@ -50,7 +50,7 @@ $( document ).ready(function() {
         var selectedProductLine = this.value;
         
         // Loop through each listing
-        $( ".rep_list .rep" ).each(function() {
+        $( ".showroom_list .showroom" ).each(function() {
 
             // If this rep has our selected state in it's class list, show the rep
             if($(this).data('product-line') == selectedProductLine) {
