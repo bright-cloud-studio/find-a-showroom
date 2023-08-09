@@ -82,7 +82,7 @@ class ModFindAShowroom extends \Contao\Module
   			return;
   		}
 
-		$arrReps = array();
+		$arrShowrooms = array();
         $showroom_id = 0;
 		
 		// Generate List
@@ -102,11 +102,11 @@ class ModFindAShowroom extends \Contao\Module
 			$strItemTemplate = ($this->locations_customItemTpl != '' ? $this->locations_customItemTpl : 'item_showroom');
 			$objTemplate = new \FrontendTemplate($strItemTemplate);
 			$objTemplate->setData($arrLocation);
-			$arrReps[$showroom_id] = $objTemplate->parse();
+			$arrShowrooms[$showroom_id] = $objTemplate->parse();
             $showroom_id++;
 		}
 
-        $this->Template->reps = $arrReps;
+        $this->Template->showrooms = $arrShowrooms;
 		
 	}
 
