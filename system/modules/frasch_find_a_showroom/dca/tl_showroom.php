@@ -103,27 +103,27 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{rep_legend},rep_name,company_name,region,product_line,address,city,zip,phone_number,alt_phone_number,email,website;{state_legend},state;{publish_legend},published;'
+        'default'                     => '{showroom_legend},rep_name,company_name,region,product_line,address,city,zip,phone_number,alt_phone_number,email,website;{state_legend},state;{publish_legend},published;'
     ),
  
     // Fields
     'fields' => array
     (
         'id' => array
-        (
-            'sql'                     => "int(10) unsigned NOT NULL auto_increment"
-        ),
+            (
+                'sql'                     => "int(10) unsigned NOT NULL auto_increment"
+            ),
         'tstamp' => array
-        (
-            'sql'                     => "int(10) unsigned NOT NULL default '0'"
-        ),
-    		'sorting' => array
+            (
+                'sql'                     => "int(10) unsigned NOT NULL default '0'"
+            ),
+        'sorting' => array
     		(
-            'sql'                     => "int(10) unsigned NOT NULL default '0'"
+                'sql'                     => "int(10) unsigned NOT NULL default '0'"
     		),
-    		'name' => array
+        'showroom_name' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['name'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['showroom_name'],
     			'inputType'               => 'text',
     			'default'                 => '',
     			'search'                  => true,
@@ -148,23 +148,6 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     			'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
     			'sql'                     => "varchar(255) NOT NULL default ''"
     		),
-        'product_line' => array
-    		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['product_line'],
-    			'inputType'               => 'select',
-                'options'                 => array('' => ' ', 'full_line' => 'Full Line', 'lighting_only' => 'Lighting Only', 'corporate' => 'Corporate'),
-                'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
-                'sql'                     => "varchar(32) NOT NULL default ''"
-    		),
-        'address' => array
-    		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['address'],
-    			'inputType'               => 'text',
-    			'default'                 => '',
-    			'search'                  => true,
-    			'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
-    			'sql'                     => "varchar(255) NOT NULL default ''"
-    		),
         'city' => array
     		(
     			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['city'],
@@ -183,52 +166,33 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     			'eval'                    => array('multiple'=>true, 'chosen'=>true, 'tl_class'=>'w50'),
     			'sql'                     => "varchar(255) NOT NULL default ''"
     		),
-        'zip' => array
+        'products' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['zip'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['products'],
+    			'inputType'               => 'select',
+                'options'                 => array('' => ' ', 'full_line' => 'Full Line', 'lighting_only' => 'Lighting Only', 'corporate' => 'Corporate'),
+                'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
+                'sql'                     => "varchar(32) NOT NULL default ''"
+    		),
+        'partner_type' => array
+    		(
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['partner_type'],
     			'inputType'               => 'text',
     			'default'                 => '',
     			'search'                  => true,
     			'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
     			'sql'                     => "varchar(255) NOT NULL default ''"
     		),
-        'phone_number' => array
+        'gallery_url' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['phone_number'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['gallery_url'],
     			'inputType'               => 'text',
     			'default'                 => '',
     			'search'                  => true,
     			'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
     			'sql'                     => "varchar(255) NOT NULL default ''"
     		),
-        'alt_phone_number' => array
-    		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['alt_phone_number'],
-    			'inputType'               => 'text',
-    			'default'                 => '',
-    			'search'                  => true,
-    			'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
-    			'sql'                     => "varchar(255) NOT NULL default ''"
-    		),
-        'email' => array
-    		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['email'],
-    			'inputType'               => 'text',
-    			'default'                 => '',
-    			'search'                  => true,
-    			'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
-    			'sql'                     => "varchar(255) NOT NULL default ''"
-    		),
-        'website' => array
-    		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['website'],
-    			'inputType'               => 'text',
-    			'default'                 => '',
-    			'search'                  => true,
-    			'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
-    			'sql'                     => "varchar(255) NOT NULL default ''"
-    		),
-    		'published' => array
+    	'published' => array
     		(
     			'exclude'                 => true,
     			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['published'],
