@@ -1,4 +1,4 @@
-<div class="mod_find_your_rep">
+<div class="mod_find_a_showroom">
   
   
 	<div class="filter">
@@ -92,10 +92,10 @@
   
   
   
-	<div class="rep_list">
+	<div class="showroom_list">
 		<?php
-			foreach($this->reps as $rep) {
-				echo $rep;
+			foreach($this->showrooms as $showroom) {
+				echo $showroom;
 			}
 		?>
 	</div>
