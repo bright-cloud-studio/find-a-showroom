@@ -36,13 +36,13 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
         'sorting' => array
         (
             'mode'                    => 1,
-            'fields'                  => array('name'),
+            'fields'                  => array('showroom_name'),
             'flag'                    => 1,
             'panelLayout'             => 'filter;search,limit'
         ),
         'label' => array
         (
-            'fields'                  => array('state', 'city', 'name'),
+            'fields'                  => array('state', 'city', 'showroom_name'),
             'format'                  => '%s - %s - %s'
         ),
         'global_operations' => array
