@@ -103,7 +103,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{showroom_legend},showroom_name,company_name,region,product_line,address,city,zip,phone_number,alt_phone_number,email,website;{state_legend},state;{publish_legend},published;'
+        'default'                     => '{showroom_legend},showroom_name,company_name,territory_sales_manager,products,partner_type,gallery_url;{address_legend}street_address,city,state;{publish_legend},published;'
     ),
  
     // Fields
@@ -123,7 +123,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     		),
         'showroom_name' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['showroom_name'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_showroom']['showroom_name'],
     			'inputType'               => 'text',
     			'default'                 => '',
     			'search'                  => true,
@@ -132,7 +132,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     		),
         'territory_sales_manager' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['territory_sales_manager'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_showroom']['territory_sales_manager'],
     			'inputType'               => 'text',
     			'default'                 => '',
     			'search'                  => true,
@@ -141,7 +141,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     		),
         'street_address' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['street_address'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_showroom']['street_address'],
     			'inputType'               => 'text',
     			'default'                 => '',
     			'search'                  => true,
@@ -150,7 +150,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     		),
         'city' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['city'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_showroom']['city'],
     			'inputType'               => 'text',
     			'default'                 => '',
     			'search'                  => true,
@@ -159,7 +159,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     		),
         'state' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['state'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_showroom']['state'],
     			'inputType'               => 'checkbox',
     			'default'				  => '',
     			'options_callback'		  => array('Bcs\Backend\Reps', 'getStates'),
@@ -168,7 +168,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     		),
         'products' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['products'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_showroom']['products'],
     			'inputType'               => 'select',
                 'options'                 => array('' => ' ', 'full_line' => 'Full Line', 'lighting_only' => 'Lighting Only', 'corporate' => 'Corporate'),
                 'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
@@ -176,7 +176,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     		),
         'partner_type' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['partner_type'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_showroom']['partner_type'],
     			'inputType'               => 'text',
     			'default'                 => '',
     			'search'                  => true,
@@ -185,7 +185,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     		),
         'gallery_url' => array
     		(
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['gallery_url'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_showroom']['gallery_url'],
     			'inputType'               => 'text',
     			'default'                 => '',
     			'search'                  => true,
@@ -195,7 +195,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     	'published' => array
     		(
     			'exclude'                 => true,
-    			'label'                   => &$GLOBALS['TL_LANG']['tl_rep']['published'],
+    			'label'                   => &$GLOBALS['TL_LANG']['tl_showroom']['published'],
     			'inputType'               => 'checkbox',
     			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true),
     			'sql'                     => "char(1) NOT NULL default ''"
