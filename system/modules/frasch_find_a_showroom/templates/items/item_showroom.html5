@@ -5,30 +5,30 @@
 	}
 ?>
 
-<div class="rep <?= $class_states ?>" style="display: none;" data-product-line="<?= $this->product_line ?>">
+<div class="showroom <?= $class_states ?>" style="display: none;" data-product-line="<?= $this->product_line ?>">
 	
 	<div class="col_1">
-		<p class="rep_name"><?= $this->rep_name ?></p>
-		<p class="company_name"><?= $this->company_name ?></p>
+		<p class="showroom_name"><?= $this->showroom_name ?></p>
 	</div>
 	
 	<div class="col_2">
-		<p class="label">Email</p>
-		<p class="email"><?= $this->email ?></p>
+		<p class="label">Address</p>
+		<p class="street_address"><?= $this->street_address ?></p>
 	</div>
 	
 	<div class="col_3">
-		<p class="label">Phone</p>
-		<p class="phone_number"><?= $this->phone_number ?></p>
+		<p class="label">Territory Sales Manager</p>
+		<p class="territory_sales_manager"><?= $this->territory_sales_manager ?></p>
 	</div>
 	
 	<div class="col_4">
-		<p class="label">Territory</p>
-		<p class="territory"><?= $this->region ?></p>
+		<p class="label">Products</p>
+		<p class="products"><?= $this->products ?></p>
 	</div>
 	
 	<div class="col_5">
-		<a href="mailto:<?= $this->email ?>">Contact</a>
+		<p class="label">Partner Type</p>
+		<p class="partner_type"><?= $this->partner_type ?></p>
 	</div>
 	
 	<div class="col_dev">
