@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Bright Cloud Studio's Find Your Rep
+ * Bright Cloud Studio's Find A Showroom
  *
  * Copyright (C) 2023 Bright Cloud Studio
  *
- * @package    bright-cloud-studio/frasch-find-your-rep
+ * @package    bright-cloud-studio/frasch-find-a-showroom
  * @link       https://www.brightcloudstudio.com/
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
@@ -14,14 +14,14 @@
 namespace Bcs\Backend;
 
 use Contao\DataContainer;
-use Bcs\Model\Rep;
+use Bcs\Model\Showroom;
 
-class Reps extends \Backend
+class Showrooms extends \Backend
 {
 
 	public function getItemTemplates()
 	{
-      return $this->getTemplateGroup('item_rep');
+      return $this->getTemplateGroup('item_showroom');
 	}
 
 	
@@ -47,9 +47,9 @@ class Reps extends \Backend
 	public function toggleVisibility($intId, $blnVisible, DataContainer $dc=null)
 	{
 		// Trigger the save_callback
-		if (is_array($GLOBALS['TL_DCA']['tl_rep']['fields']['published']['save_callback']))
+		if (is_array($GLOBALS['TL_DCA']['tl_showroom']['fields']['published']['save_callback']))
 		{
-			foreach ($GLOBALS['TL_DCA']['tl_rep']['fields']['published']['save_callback'] as $callback)
+			foreach ($GLOBALS['TL_DCA']['tl_showroom']['fields']['published']['save_callback'] as $callback)
 			{
 				if (is_array($callback))
 				{
@@ -64,10 +64,10 @@ class Reps extends \Backend
 		}
 
 		// Update the database
-		$this->Database->prepare("UPDATE tl_rep SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
+		$this->Database->prepare("UPDATE tl_showroom SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
 					   ->execute($intId);
 
-		$this->log('A new version of record "tl_rep.id='.$intId.'" has been created'.$this->getParentEntries('tl_location', $intId), __METHOD__, TL_GENERAL);
+		$this->log('A new version of record "tl_showroom.id='.$intId.'" has been created'.$this->getParentEntries('tl_location', $intId), __METHOD__, TL_GENERAL);
 	}
 
 	function getStates()
