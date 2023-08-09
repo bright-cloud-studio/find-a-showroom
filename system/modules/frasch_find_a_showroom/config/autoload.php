@@ -13,15 +13,15 @@
 /* Register the classes */
 ClassLoader::addClasses(array
 (
-      'Bcs\Module\ModFindYourRep' 		=> 'system/modules/frasch_find_your_rep/library/Bcs/Module/ModFindYourRep.php',
-      'Bcs\Backend\Reps'              => 'system/modules/frasch_find_your_rep/library/Bcs/Backend/Reps.php',
-      'Bcs\Model\Rep'                 => 'system/modules/frasch_find_your_rep/library/Bcs/Model/Rep.php',
-      'Bcs\Reps'                      => 'system/modules/frasch_find_your_rep/library/Bcs/Reps.php'
+      'Bcs\Module\ModFindAShowroom' 	   => 'system/modules/frasch_find_a_showroom/library/Bcs/Module/ModFindAShowroom.php',
+      'Bcs\Backend\Showrooms'              => 'system/modules/frasch_find_a_showroom/library/Bcs/Backend/Showrooms.php',
+      'Bcs\Model\Showroom'                 => 'system/modules/frasch_find_a_showroom/library/Bcs/Model/Showroom.php',
+      'Bcs\Showrooms'                      => 'system/modules/frasch_find_a_showroom/library/Bcs/SHowrooms.php'
 ));
 
 /* Register the templates */
 TemplateLoader::addFiles(array
 (
-      'mod_find_your_rep'  => 'system/modules/frasch_find_your_rep/templates/modules',
-      'item_rep'           => 'system/modules/frasch_find_your_rep/templates/items',
+      'mod_find_a_showroom'  => 'system/modules/frasch_find_a_showroom/templates/modules',
+      'item_showroom'        => 'system/modules/frasch_find_a_showroom/templates/items',
 ));
