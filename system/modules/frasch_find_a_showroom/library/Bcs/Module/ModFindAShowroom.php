@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Bright Cloud Studio's Find Your Rep
+ * Bright Cloud Studio's Find A Showroom
  *
  * Copyright (C) 2023 Bright Cloud Studio
  *
- * @package    bright-cloud-studio/frasch-find-your-rep
+ * @package    bright-cloud-studio/frasch-find-a-showroom
  * @link       https://www.brightcloudstudio.com/
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
@@ -13,17 +13,17 @@
   
 namespace Bcs\Module;
  
-use Bcs\Model\Rep;
-use Bcs\Reps; 
+use Bcs\Model\Showroom;
+use Bcs\Showrooms; 
  
-class ModFindYourRep extends \Contao\Module
+class ModFindAShowroom extends \Contao\Module
 {
  
     /**
      * Template
      * @var string
      */
-    protected $strTemplate = 'mod_find_your_rep';
+    protected $strTemplate = 'mod_find_a_showroom';
  
 	protected $arrStates = array();
  
@@ -49,7 +49,7 @@ class ModFindYourRep extends \Contao\Module
         {
             $objTemplate = new \BackendTemplate('be_wildcard');
  
-            $objTemplate->wildcard = '### ' . utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['mod_find_your_rep'][0]) . ' ###';
+            $objTemplate->wildcard = '### ' . utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['mod_find_a_showroom'][0]) . ' ###';
             $objTemplate->title = $this->headline;
             $objTemplate->id = $this->id;
             $objTemplate->link = $this->name;
@@ -69,8 +69,8 @@ class ModFindYourRep extends \Contao\Module
     {
 		  $objLocation = Rep::findBy('published', '1');
 
-        if (!in_array('system/modules/frasch_find_your_rep/assets/js/mod_find_your_rep.js', $GLOBALS['TL_JAVASCRIPT'])) { 
-            $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/frasch_find_your_rep/assets/js/mod_find_your_rep.js';
+        if (!in_array('system/modules/frasch_find_a_showroom/assets/js/mod_find_a_showroom.js', $GLOBALS['TL_JAVASCRIPT'])) { 
+            $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/frasch_find_a_showroom/assets/js/mod_find_a_showroom.js';
         }
 		
 
@@ -83,31 +83,27 @@ class ModFindYourRep extends \Contao\Module
   		}
 
 		$arrReps = array();
-        $rep_id = 0;
+        $showroom_id = 0;
 		
 		// Generate List
 		while ($objLocation->next())
 		{
             
-			$arrLocation['rep_name'] 			= $objLocation->rep_name;
-			$arrLocation['company_name']		= $objLocation->company_name;
-			$arrLocation['region']              = $objLocation->region;
-			$arrLocation['product_line']        = $objLocation->product_line;
-			$arrLocation['address'] 			= $objLocation->address;
-			$arrLocation['city']                = $objLocation->city;
-            $arrLocation['zip']                 = $objLocation->zip;
-            $arrLocation['phone_number']        = $objLocation->phone_number;
-            $arrLocation['alt_phone_number']    = $objLocation->alt_phone_number;
-            $arrLocation['email']               = $objLocation->email;
-            $arrLocation['website'] 			= $objLocation->website;
+			$arrLocation['showroom_name']              = $objLocation->showroom_name;
+			$arrLocation['territory_sales_manager']    = $objLocation->territory_sales_manager;
+			$arrLocation['street_address']             = $objLocation->street_address;
+			$arrLocation['city']                       = $objLocation->city;
+			$arrLocation['products']                   = $objLocation->products;
+            $arrLocation['partner_type']               = $objLocation->partner_type;
+            $arrLocation['gallery_url']                = $objLocation->gallery_url;
 			
-			$arrLocation['state']               = unserialize($objLocation->state);
+			$arrLocation['state']                      = unserialize($objLocation->state);
 
-			$strItemTemplate = ($this->locations_customItemTpl != '' ? $this->locations_customItemTpl : 'item_rep');
+			$strItemTemplate = ($this->locations_customItemTpl != '' ? $this->locations_customItemTpl : 'item_showroom');
 			$objTemplate = new \FrontendTemplate($strItemTemplate);
 			$objTemplate->setData($arrLocation);
-			$arrReps[$rep_id] = $objTemplate->parse();
-            $rep_id++;
+			$arrReps[$showroom_id] = $objTemplate->parse();
+            $showroom_id++;
 		}
 
         $this->Template->reps = $arrReps;
