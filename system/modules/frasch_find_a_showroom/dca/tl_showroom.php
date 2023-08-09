@@ -103,7 +103,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{showroom_legend},showroom_name,company_name,territory_sales_manager,products,partner_type,gallery_url;{address_legend}street_address,city,state;{publish_legend},published;'
+        'default'                     => '{showroom_legend},showroom_name,company_name,territory_sales_manager,products,partner_type,gallery_url;{address_legend},street_address,city,state;{publish_legend},published;'
     ),
  
     // Fields
