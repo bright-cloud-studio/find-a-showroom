@@ -12,5 +12,5 @@
 
 /* Back End Modules */
 $GLOBALS['BE_MOD']['content']['showrooms'] = array(
-    'tables'=> array('tl_showroom')
+	'tables' => array('tl_showroom')
 );
