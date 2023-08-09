@@ -25,7 +25,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
             'keys' => array
             (
                 'id' 	=> 	'primary',
-                'rep_name' =>  'index'
+                'showroom_name' =>  'index'
             )
         )
     ),
@@ -103,7 +103,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     // Palettes
     'palettes' => array
     (
-        'default'                     => '{showroom_legend},rep_name,company_name,region,product_line,address,city,zip,phone_number,alt_phone_number,email,website;{state_legend},state;{publish_legend},published;'
+        'default'                     => '{showroom_legend},showroom_name,company_name,region,product_line,address,city,zip,phone_number,alt_phone_number,email,website;{state_legend},state;{publish_legend},published;'
     ),
  
     // Fields
