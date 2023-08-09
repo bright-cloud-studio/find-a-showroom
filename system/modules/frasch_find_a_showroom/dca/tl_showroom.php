@@ -163,7 +163,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     			'inputType'               => 'checkbox',
     			'default'				  => '',
     			'options_callback'		  => array('Bcs\Backend\Reps', 'getStates'),
-    			'eval'                    => array('multiple'=>true, 'chosen'=>true, 'tl_class'=>'w50'),
+    			'eval'                    => array('multiple'=>true, 'chosen'=>true, 'tl_class'=>'w100'),
     			'sql'                     => "varchar(255) NOT NULL default ''"
     		),
         'products' => array
