@@ -67,7 +67,7 @@ class ModFindAShowroom extends \Contao\Module
      */
     protected function compile()
     {
-		  $objLocation = Rep::findBy('published', '1');
+		  $objLocation = Showroom::findBy('published', '1');
 
         if (!in_array('system/modules/frasch_find_a_showroom/assets/js/mod_find_a_showroom.js', $GLOBALS['TL_JAVASCRIPT'])) { 
             $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/frasch_find_a_showroom/assets/js/mod_find_a_showroom.js';
