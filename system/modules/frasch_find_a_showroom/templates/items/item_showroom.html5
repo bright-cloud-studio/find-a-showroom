@@ -8,27 +8,36 @@
 <div class="showroom <?= $class_states ?>" style="display: none;" data-product-line="<?= $this->product_line ?>">
 	
 	<div class="col_1">
-		<p class="showroom_name"><?= $this->showroom_name ?></p>
+		<h3 class="showroom_name"><?= $this->showroom_name ?></h3>
+		<?php if($this->gallery_url != '') { ?>
+		<p>
+			<a href="<?= $this->gallery_url ?>">View Showroom</a>
+		</p>
+		<?php } ?>
 	</div>
 	
-	<div class="col_2">
-		<p class="label">Address</p>
-		<p class="street_address"><?= $this->street_address ?></p>
+	<div class="group_1">
+		<div class="col_2">
+			<h4 class="label">Address</h4>
+			<p class="street_address"><?= $this->street_address ?></p>
+		</div>
+		
+		<div class="col_3">
+			<h4 class="label">Territory Sales Manager</h4>
+			<p class="territory_sales_manager"><?= $this->territory_sales_manager ?></p>
+		</div>
 	</div>
 	
-	<div class="col_3">
-		<p class="label">Territory Sales Manager</p>
-		<p class="territory_sales_manager"><?= $this->territory_sales_manager ?></p>
-	</div>
-	
-	<div class="col_4">
-		<p class="label">Products</p>
-		<p class="products"><?= $this->products ?></p>
-	</div>
-	
-	<div class="col_5">
-		<p class="label">Partner Type</p>
-		<p class="partner_type"><?= $this->partner_type ?></p>
+	<div class="group_2">
+		<div class="col_4">
+			<h4 class="label">Products</h4>
+			<p class="products"><?= $this->products ?></p>
+		</div>
+		
+		<div class="col_5">
+			<h4 class="label">Partner Type</h4>
+			<p class="partner_type"><?= $this->partner_type ?></p>
+		</div>
 	</div>
 	
 	<div class="col_dev">
