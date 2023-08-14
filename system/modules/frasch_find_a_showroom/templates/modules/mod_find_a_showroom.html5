@@ -1,6 +1,7 @@
 <div class="mod_find_a_showroom">
-  
-  
+
+	{{file::file_map.html5}}
+	
 	<div class="filter">
 		<div class="select_state">
 			<h2>Select Your State</h2>
@@ -82,16 +83,11 @@
 				<option value="corporate">Corporate</option>
 			</select>
 		</div>
-		
-		
-		
-		
+
 	</div>
-  
-  
-  
-  
-  
+
+
+
 	<div class="showroom_list">
 		<?php
 			foreach($this->showrooms as $showroom) {
@@ -99,5 +95,7 @@
 			}
 		?>
 	</div>
+
+
   
 </div>
