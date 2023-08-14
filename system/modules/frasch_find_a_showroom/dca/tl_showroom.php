@@ -170,7 +170,7 @@ $GLOBALS['TL_DCA']['tl_showroom'] = array
     		(
     			'label'                   => &$GLOBALS['TL_LANG']['tl_showroom']['products'],
     			'inputType'               => 'select',
-                'options'                 => array('' => ' ', 'bafl' => 'BAFL', 'brik' => 'BRIK', 'brik_1_0' => 'BRIK 1.0', 'cloud' => 'Cloud', 'linyfelt' => 'Linyfelt', 'multi' => 'Multi', 'plank' => 'Plank'),
+                'options'                 => array('' => ' ', 'bafl' => 'BAFL', 'brik' => 'BRIK', 'brik_1_0' => 'BRIK 1.0', 'cloud' => 'Cloud', 'linyfelt' => 'Linyfelt', 'multi' => 'Multi', 'plank' => 'Plank', 'spoke' => 'Spoke'),
                 'eval'                    => array('mandatory'=>false, 'tl_class'=>'w50'),
                 'sql'                     => "varchar(32) NOT NULL default ''"
     		),
