@@ -11,7 +11,7 @@
 		<h3 class="showroom_name"><?= $this->showroom_name ?></h3>
 		<?php if($this->gallery_url != '') { ?>
 		<p>
-			<a href="<?= $this->gallery_url ?>">View Showroom</a>
+			<a href="/find-a-showroom/<?= $this->gallery_url ?>">View Showroom</a>
 		</p>
 		<?php } ?>
 	</div>
